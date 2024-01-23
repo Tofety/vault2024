@@ -39,8 +39,8 @@ public class RobotContainer {
         s_Swerve.setDefaultCommand(
             new TeleopSwerve(
                 s_Swerve, 
-                () -> -driver.getRawAxis(translationAxis)/2, 
-                () -> -driver.getRawAxis(strafeAxis)/2, 
+                () -> -driver.getRawAxis(translationAxis), 
+                () -> -driver.getRawAxis(strafeAxis), 
                 () -> -driver.getRawAxis(rotationAxis), 
                 () -> robotCentric.getAsBoolean()
             )
@@ -58,7 +58,7 @@ public class RobotContainer {
      */
     private void configureButtonBindings() {
         /* Driver Buttons */
-        zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroGyro()));
+        zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroHeading()));
     }
 
     /**
@@ -66,9 +66,9 @@ public class RobotContainer {
      *
      * @return the command to run in autonomous
      */
-    public Command getAutonomousCommand() {
-        // An ExampleCommand will run in autonomous
-        return new exampleAuto(s_Swerve);
-        //return new testAuto(s_Swerve);
-    }
+    // public Command getAutonomousCommand() {
+    //     // An ExampleCommand will run in autonomous
+
+    //     //return new exampleAuto(s_Swerve);
+    // }
 }
