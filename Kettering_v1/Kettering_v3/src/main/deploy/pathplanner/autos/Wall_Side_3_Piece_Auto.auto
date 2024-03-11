@@ -1,0 +1,61 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.8601824895957499,
+      "y": 6.660186397295872
+    },
+    "rotation": 60.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "Shooter"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Wall_Side_3_Piece_1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Wall_Side_3_Piece_2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shooter"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Wall_Side_3_Piece_3"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Wall_Side_3_Piece_4"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shooter"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

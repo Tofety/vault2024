@@ -1,0 +1,68 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 8.28,
+        "y": 5.78
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 8.233642723803184,
+        "y": 5.78
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.57,
+        "y": 6.51
+      },
+      "prevControl": {
+        "x": 7.363815362211055,
+        "y": 6.202385880857811
+      },
+      "nextControl": {
+        "x": 3.776184637788946,
+        "y": 6.817614119142188
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 0.59,
+        "y": 6.79
+      },
+      "prevControl": {
+        "x": 0.7968303671566173,
+        "y": 6.79
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.0,
+    "maxAcceleration": 4.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 60.0,
+    "rotateFast": true
+  },
+  "reversed": false,
+  "folder": "Wall_Side_3_Piece",
+  "previewStartingState": {
+    "rotation": 0.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

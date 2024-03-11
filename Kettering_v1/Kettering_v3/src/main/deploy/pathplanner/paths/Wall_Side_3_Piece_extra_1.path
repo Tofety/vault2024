@@ -1,0 +1,102 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.5887006059726411,
+        "y": 6.787329003229436
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 0.6350578821694564,
+        "y": 6.787329003229436
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.576581153162308,
+        "y": 6.512182255133741
+      },
+      "prevControl": {
+        "x": 3.8670550508829677,
+        "y": 7.135782971688467
+      },
+      "nextControl": {
+        "x": 7.145425060080891,
+        "y": 5.939899572106838
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 6.9382192610539075,
+        "y": 5.775826408795675
+      },
+      "prevControl": {
+        "x": 6.302238302450741,
+        "y": 5.846995706544125
+      },
+      "nextControl": {
+        "x": 7.411832515972725,
+        "y": 5.722826830269045
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.28,
+        "y": 5.775826408795675
+      },
+      "prevControl": {
+        "x": 8.069999999999999,
+        "y": 5.775826408795675
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "New Event Marker",
+      "waypointRelativePos": 1.8,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Intake"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 5.0,
+    "maxAcceleration": 4.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0,
+    "rotateFast": true
+  },
+  "reversed": false,
+  "folder": "Wall_Side_3_Piece",
+  "previewStartingState": {
+    "rotation": 60.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": false
+}
