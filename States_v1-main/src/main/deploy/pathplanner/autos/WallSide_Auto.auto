@@ -1,0 +1,55 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.5887006059726411,
+      "y": 6.787329003229436
+    },
+    "rotation": 60.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "Shooter"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.75
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Trigger"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "WallSide_Path_1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Copy of WallSide_Path_1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Trigger"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}
