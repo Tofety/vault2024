@@ -60,6 +60,8 @@ public class RobotContainer {
     Trigger LiftDownButton = new JoystickButton(driver, 30);
     Trigger LimelightStop = new JoystickButton(operator, 8);
 
+    Trigger ledButtonTrigger = new JoystickButton(operator, 9);
+
     
     
     
@@ -148,6 +150,8 @@ public class RobotContainer {
         //manualShooterWheelsButton.onTrue(s_Shooter.runShooterCommand());
         //manualShooterWheelsButton.onFalse(s_Shooter.stopShooterCommand());
         
+        ledButtonTrigger.onTrue(s_Intake_Shooter.ledOn());
+        ledButtonTrigger.onFalse(s_Intake_Shooter.ledOff());
         
         // Register Named Commands
         NamedCommands.registerCommand("Intake", s_Intake_Shooter.autoIntake());

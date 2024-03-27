@@ -10,7 +10,10 @@ import com.revrobotics.CANSparkMax;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DigitalOutput;
+import edu.wpi.first.wpilibj.PWM;
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
@@ -33,8 +36,20 @@ public class Intake_Shooter extends SubsystemBase {
     public BooleanSupplier NoteValueShooter;
     public Boolean ShooterFlag = true;
 
+    //LED
+    public PWM led;
+    // public PWM ledPWM;
+
+
     
     public Intake_Shooter() {
+        //LED
+        led = new PWM(0);
+        //led.setSpeed(1.0);
+
+        // ledPWM = new PWM(0);
+        // ledPWM.setSpeed(1.0);
+
         //Intake
         TIntake = new TalonSRX(12);
         BIntake = new TalonSRX(10);
@@ -225,6 +240,13 @@ public class Intake_Shooter extends SubsystemBase {
         return runShooterTriggerCommand().andThen(Commands.waitSeconds(0.5)).andThen(stopShooterTriggerCommand());
     }
 
+    public Command ledOn() {
+        return runOnce(() -> led.setSpeed(1));
+    }
+
+    public Command ledOff() {
+        return runOnce(() -> led.setSpeed(0));
+    }
 
     // stop intake
     // reverse intake
