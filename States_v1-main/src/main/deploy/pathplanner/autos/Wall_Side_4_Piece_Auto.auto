@@ -18,6 +18,18 @@
           }
         },
         {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.72
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Shooter"
+          }
+        },
+        {
           "type": "path",
           "data": {
             "pathName": "Wall_Side_3_Piece_1"
@@ -32,7 +44,7 @@
         {
           "type": "named",
           "data": {
-            "name": "Shooter"
+            "name": "Trigger"
           }
         },
         {
@@ -50,7 +62,7 @@
         {
           "type": "named",
           "data": {
-            "name": "Shooter"
+            "name": "Trigger"
           }
         },
         {
@@ -68,7 +80,7 @@
         {
           "type": "named",
           "data": {
-            "name": "Shooter"
+            "name": "Trigger"
           }
         }
       ]

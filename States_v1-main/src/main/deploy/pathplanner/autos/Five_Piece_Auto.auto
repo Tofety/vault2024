@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.5740411480822968,
-      "y": 4.353858993432273
+      "x": 1.3367291599448063,
+      "y": 5.55
     },
-    "rotation": -60.0
+    "rotation": 0
   },
   "command": {
     "type": "sequential",
@@ -32,13 +32,49 @@
         {
           "type": "path",
           "data": {
-            "pathName": "OuterSide_3_Piece_1"
+            "pathName": "Four_Piece_1"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "OuterSide_3_Piece_2"
+            "pathName": "Four_Piece_2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Trigger"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Four_Piece_3"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Four_Piece_4"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Trigger"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Four_Piece_5"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "New_Four_Piece_6"
           }
         },
         {
@@ -56,31 +92,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "OuterSide_3_Piece_3"
+            "pathName": "New_Fifth_Piece_1"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "OuterSide_3_Piece_4"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Trigger"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "OuterSide_4_Piece_Extra_1"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "OuterSide_4_Piece_Extra_2"
+            "pathName": "Fifth_Piece_2"
           }
         },
         {

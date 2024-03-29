@@ -16,28 +16,44 @@
     },
     {
       "anchor": {
-        "x": 5.57291628868972,
-        "y": 6.508799303312892
+        "x": 4.499367172771434,
+        "y": 6.787329003229436
       },
       "prevControl": {
-        "x": 3.770858782836251,
-        "y": 6.761674951921332
+        "x": 2.9967567714931795,
+        "y": 7.047238995843389
       },
       "nextControl": {
-        "x": 7.374973794543189,
-        "y": 6.255923654704452
+        "x": 6.001977574049688,
+        "y": 6.527419010615483
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.01,
+        "x": 7.33338961685056,
         "y": 5.775826408795675
       },
       "prevControl": {
-        "x": 7.803169632843383,
+        "x": 6.431655202825382,
+        "y": 5.738309907432939
+      },
+      "nextControl": {
+        "x": 8.041645357480329,
+        "y": 5.80529326405286
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.762111675435905,
         "y": 5.775826408795675
+      },
+      "prevControl": {
+        "x": 7.95406395377698,
+        "y": 5.738309907432939
       },
       "nextControl": null,
       "isLocked": false,
@@ -45,11 +61,23 @@
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "New Constraints Zone",
+      "minWaypointRelativePos": 2.15,
+      "maxWaypointRelativePos": 3.0,
+      "constraints": {
+        "maxVelocity": 5.0,
+        "maxAcceleration": 4.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0
+      }
+    }
+  ],
   "eventMarkers": [
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 1.4,
+      "waypointRelativePos": 1.6,
       "command": {
         "type": "parallel",
         "data": {
@@ -66,7 +94,7 @@
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 5.0,
+    "maxVelocity": 12.0,
     "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
@@ -82,5 +110,5 @@
     "rotation": 60.0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

@@ -15,10 +15,10 @@ public class Limelight extends SubsystemBase{
     NetworkTableEntry ty = tableNote.getEntry("ty");
     NetworkTableEntry ta = tableNote.getEntry("ta");
     
-    NetworkTable tableApril = NetworkTableInstance.getDefault().getTable("limelight-april");
-    NetworkTableEntry atx = tableApril.getEntry("tx");
-    NetworkTableEntry aty = tableApril.getEntry("ty");
-    NetworkTableEntry ata = tableApril.getEntry("ta");
+    // NetworkTable tableApril = NetworkTableInstance.getDefault().getTable("limelight-april");
+    // NetworkTableEntry atx = tableApril.getEntry("tx");
+    // NetworkTableEntry aty = tableApril.getEntry("ty");
+    // NetworkTableEntry ata = tableApril.getEntry("ta");
 
     public Limelight(){
         NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("camMode").setNumber(1);   
