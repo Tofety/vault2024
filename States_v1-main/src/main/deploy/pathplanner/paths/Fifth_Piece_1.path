@@ -16,16 +16,16 @@
     },
     {
       "anchor": {
-        "x": 5.616894662360753,
-        "y": 7.300410029391488
+        "x": 5.693872500441148,
+        "y": 7.284140331476098
       },
       "prevControl": {
-        "x": 4.825283936282158,
-        "y": 7.1831343662687335
+        "x": 4.902261774362553,
+        "y": 7.166864668353344
       },
       "nextControl": {
-        "x": 6.652994036349806,
-        "y": 7.453906232945421
+        "x": 6.729971874430201,
+        "y": 7.437636535030031
       },
       "isLocked": false,
       "linkedName": null
@@ -48,7 +48,7 @@
   "constraintZones": [
     {
       "name": "New Constraints Zone",
-      "minWaypointRelativePos": 1.6,
+      "minWaypointRelativePos": 1.45,
       "maxWaypointRelativePos": 2.0,
       "constraints": {
         "maxVelocity": 2.0,
@@ -70,23 +70,6 @@
               "type": "named",
               "data": {
                 "name": "Intake"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "name": "New Event Marker",
-      "waypointRelativePos": 1.25,
-      "command": {
-        "type": "parallel",
-        "data": {
-          "commands": [
-            {
-              "type": "named",
-              "data": {
-                "name": "NoteTracking"
               }
             }
           ]

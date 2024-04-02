@@ -10,7 +10,7 @@ import frc.robot.LimelightHelpers;
 import frc.robot.LimelightHelpers.Results;
 
 public class Limelight extends SubsystemBase{
-    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-notes");
     NetworkTableEntry tx = table.getEntry("tx");
     NetworkTableEntry ty = table.getEntry("ty");
     NetworkTableEntry ta = table.getEntry("ta");

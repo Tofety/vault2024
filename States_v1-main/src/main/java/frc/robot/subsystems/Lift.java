@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Lift extends SubsystemBase {
 
+    //public final Intake_Shooter s_Intake_Shooter = new Intake_Shooter();
+
     public static Solenoid Left;
     public static Solenoid Right;
     public static Solenoid StopLeft;
@@ -77,7 +79,7 @@ public class Lift extends SubsystemBase {
     }
 
     public Command LongShotAutoCommand(){
-        return LongShotOutCommand().andThen(Commands.waitSeconds(0.7)).andThen(LongShotInCommand());
+        return LongShotOutCommand().andThen(Commands.waitSeconds(0.5)).andThen(LongShotInCommand());
     }
 
     public Command LongShotInCommand(){

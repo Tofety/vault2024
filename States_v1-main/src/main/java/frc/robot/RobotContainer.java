@@ -73,7 +73,7 @@ public class RobotContainer {
     private final JoystickButton zeroGyro = new JoystickButton(driver, 10);
     private final JoystickButton robotCentric = new JoystickButton(driver, 100);
     
-    private final JoystickButton AprilTagsButton = new JoystickButton(operator, 8);
+    private final JoystickButton AprilTagsButton = new JoystickButton(driver, 14);
     private final JoystickButton limelightButton = new JoystickButton(driver, 8);
     
     /* Subsystems */
@@ -90,14 +90,14 @@ public class RobotContainer {
     
 
             
-    public Command NoteTrackingCommand(){
-        return new TeleopLimelight(
-            s_Swerve, s_Limelight,
-            null, 
-            null,
-            null, 
-            () -> robotCentric.getAsBoolean()).until(s_Intake_Shooter.NoteValue).unless(s_Intake_Shooter.NoteValue);
-    }
+    // public Command NoteTrackingCommand(){
+    //     return new TeleopLimelight(
+    //         s_Swerve, s_Limelight,
+    //         null, 
+    //         null,
+    //         null, 
+    //         () -> robotCentric.getAsBoolean()).until(s_Intake_Shooter.NoteValue).unless(s_Intake_Shooter.NoteValue);
+    // }
     
         
         
@@ -122,12 +122,12 @@ public class RobotContainer {
                     () -> robotCentric.getAsBoolean()).until(s_Intake_Shooter.NoteValue).unless(s_Intake_Shooter.NoteValue));
                     limelightButton.whileTrue(s_Intake_Shooter.autoIntake());
                     
-        AprilTagsButton.whileTrue(new TeleopAprilTags(
-            s_Swerve, s_Limelight, 
-            null, 
-            null, 
-            null, 
-            robotCentric));
+                AprilTagsButton.whileTrue(new TeleopAprilTags(
+                    s_Swerve, s_AprilTagsLimelight, 
+                    () -> -driver.getRawAxis(translationAxis), 
+                    () -> -driver.getRawAxis(strafeAxis),
+                    null, 
+                    () -> robotCentric.getAsBoolean()));
                         
                         
                         //ShooterButtonPressed = () -> manualShooterTriggerButton.getAsBoolean() == true;
@@ -174,11 +174,13 @@ public class RobotContainer {
         
         // Register Named Commands
         NamedCommands.registerCommand("Intake", s_Intake_Shooter.autoIntake());
+        NamedCommands.registerCommand("IntakeLong", s_Intake_Shooter.runIntakeLongCommand());
         NamedCommands.registerCommand("Shooter", s_Intake_Shooter.runShooterCommand());
         NamedCommands.registerCommand("StopShooter", s_Intake_Shooter.stopShooterCommand());
         NamedCommands.registerCommand("Trigger", s_Intake_Shooter.TimedShooterTriggerCommand());
-        NamedCommands.registerCommand("NoteTracking", NoteTrackingCommand());
-        NamedCommands.registerCommand("LongShotPrep", s_Lift.LongShotAutoCommand());
+        //NamedCommands.registerCommand("NoteTracking", NoteTrackingCommand());
+        NamedCommands.registerCommand("LongShotOut", s_Lift.LongShotOutCommand());
+        NamedCommands.registerCommand("LongShotIn", s_Lift.LongShotInCommand());
         //autoChooser
         
         autoChooser = AutoBuilder.buildAutoChooser(); // Default auto will be `Commands.none()'

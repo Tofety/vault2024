@@ -16,6 +16,22 @@
     },
     {
       "anchor": {
+        "x": 3.984090364757048,
+        "y": 5.995948311440133
+      },
+      "prevControl": {
+        "x": 2.963548199913655,
+        "y": 5.787201050449439
+      },
+      "nextControl": {
+        "x": 5.01464398078582,
+        "y": 6.206743369264199
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
         "x": 6.513631058645855,
         "y": 7.213875312201409
       },
@@ -48,8 +64,8 @@
   "constraintZones": [
     {
       "name": "New Constraints Zone",
-      "minWaypointRelativePos": 1.45,
-      "maxWaypointRelativePos": 2.0,
+      "minWaypointRelativePos": 2.4000000000000004,
+      "maxWaypointRelativePos": 3.0,
       "constraints": {
         "maxVelocity": 2.0,
         "maxAcceleration": 4.0,
@@ -61,7 +77,7 @@
   "eventMarkers": [
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 1.0,
+      "waypointRelativePos": 2.0,
       "command": {
         "type": "parallel",
         "data": {
@@ -78,7 +94,7 @@
     },
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 1.25,
+      "waypointRelativePos": 2.25,
       "command": {
         "type": "parallel",
         "data": {
@@ -92,10 +108,27 @@
           ]
         }
       }
+    },
+    {
+      "name": "New Event Marker",
+      "waypointRelativePos": 0.7,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "LongShotIn"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 12.0,
+    "maxVelocity": 14.0,
     "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
@@ -108,7 +141,7 @@
   "reversed": false,
   "folder": "Four_Piece",
   "previewStartingState": {
-    "rotation": -20.0,
+    "rotation": -23.0,
     "velocity": 0
   },
   "useDefaultConstraints": false

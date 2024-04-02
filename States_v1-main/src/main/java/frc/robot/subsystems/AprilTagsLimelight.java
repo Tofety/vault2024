@@ -14,17 +14,24 @@ public class AprilTagsLimelight extends SubsystemBase{
     // NetworkTableEntry tx = tableNote.getEntry("tx");
     // NetworkTableEntry ty = tableNote.getEntry("ty");
     // NetworkTableEntry ta = tableNote.getEntry("ta");
+
+
     
     NetworkTable tableApril = NetworkTableInstance.getDefault().getTable("limelight-april");
     NetworkTableEntry atx = tableApril.getEntry("tx");
     NetworkTableEntry aty = tableApril.getEntry("ty");
     NetworkTableEntry ata = tableApril.getEntry("ta");
-    double[] botposeBlue = NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("botpose_wpiblue").getDoubleArray(new double[0]);  
+    //public double[] botposeBlue;
+    //double[] botposeBlue = NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("botpose_wpiblue").getDoubleArray(new double[0]);  
 
     public AprilTagsLimelight(){
         NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("camMode").setNumber(0);
         //NetworkTableEntry  translationVar = tableApril.getEntry("botpose_wpiblue");
         //double translationVar = botposeBlue[0];
+    }
+
+    public Double LimelightRotation(){
+        return atx.getDouble(0);
     }
     // NetworkTableEntry Atx = tableApril.getEntry("tx");
     // NetworkTableEntry Aty = tableApril.getEntry("ty");
@@ -40,32 +47,37 @@ public class AprilTagsLimelight extends SubsystemBase{
     // public Command StopLimelightCommand(){
     //     return this.runOnce(this::StopLimelight);
     // }
+    //double [] botposeBlue = NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("botpose_wpiblue").getDoubleArray(new double[0]);
 
-    public Double LimelightTranslation(){
-        return botposeBlue[0];
-        //return tx.getDouble(0);
+    @Override
+    public void periodic(){
+        // double x = tx.getDouble(0.0);
+        // double y = ty.getDouble(0.0);
+        // double area = ta.getDouble(0.0);
+        double Ax = atx.getDouble(0.0);
+        double Ay = aty.getDouble(0.0);
+        double Aarea = ata.getDouble(0.0);
+        SmartDashboard.putNumber("LimelightX", Ax);
+        SmartDashboard.putNumber("LimelightY", Ay);
+        SmartDashboard.putNumber("LimelightArea", Aarea);
+        // SmartDashboard.putNumber("botpose 0", botposeBlue[0]);       
+        // SmartDashboard.putNumber("botpose 1", botposeBlue[1]);  
+        // SmartDashboard.putNumber("botpose 5", botposeBlue[5]);  
     }
 
-    public Double LimelightStrafe(){
-        return botposeBlue[1];
-    }
+    // public Double LimelightTranslation(){
+    //     return botposeBlue[0];
+    //     //return tx.getDouble(0);
+    // }
 
-    public Double LimelightRotation(){
-        return botposeBlue[2];
-    }
+    // public Double LimelightStrafe(){
+    //     return botposeBlue[1];
+    // }
+
+    // public Double LimelightRotation(){
+    //     return botposeBlue[2];
+    // }
 
     
-        @Override
-        public void periodic(){
-            // double x = tx.getDouble(0.0);
-            // double y = ty.getDouble(0.0);
-            // double area = ta.getDouble(0.0);
-            double Ax = atx.getDouble(0.0);
-            double Ay = aty.getDouble(0.0);
-            double Aarea = ata.getDouble(0.0);
-            SmartDashboard.putNumber("LimelightX", Ax);
-            SmartDashboard.putNumber("LimelightY", Ay);
-            SmartDashboard.putNumber("LimelightArea", Aarea);        
-        }
 
 }

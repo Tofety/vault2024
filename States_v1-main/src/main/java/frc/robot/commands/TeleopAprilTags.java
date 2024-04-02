@@ -26,10 +26,10 @@ public class TeleopAprilTags extends Command {
 
     // private PIDController RotationPID = new PIDController(0.006, 0, 0.008);
     private PIDController RotationPID = new PIDController(0.0065, 0, 0.000);
-    private PIDController TranslationPID = new PIDController(0.0065, 0, 0);
-    private PIDController StrafePID = new PIDController(0.0065, 0, 0);
+    // private PIDController TranslationPID = new PIDController(0.0065, 0, 0);
+    // private PIDController StrafePID = new PIDController(0.0065, 0, 0);
 
-    public TeleopAprilTags(Swerve s_Swerve, Limelight s_Limelight, DoubleSupplier translationSup, DoubleSupplier strafeSup, DoubleSupplier rotationSup, BooleanSupplier robotCentricSup) {
+    public TeleopAprilTags(Swerve s_Swerve, AprilTagsLimelight s_AprilTagsLimelight, DoubleSupplier translationSup, DoubleSupplier strafeSup, DoubleSupplier rotationSup, BooleanSupplier robotCentricSup) {
         this.s_Swerve = s_Swerve;
         this.s_AprilTagsLimelight = s_AprilTagsLimelight;
         addRequirements(s_Swerve);
@@ -43,15 +43,18 @@ public class TeleopAprilTags extends Command {
 
         RotationPID.setTolerance(5);
         RotationPID.setSetpoint(0);
-        TranslationPID.setSetpoint(0);
-        StrafePID.setSetpoint(0);
+        // TranslationPID.setSetpoint(0);
+        // StrafePID.setSetpoint(0);
     }
 
     @Override
     public void execute() {
         /* Get Values, Deadband*/
-        double translationVal = TranslationPID.calculate(s_AprilTagsLimelight.LimelightTranslation());
-        double strafeVal = StrafePID.calculate(s_AprilTagsLimelight.LimelightStrafe());
+
+        double translationVal = MathUtil.applyDeadband(translationSup.getAsDouble(), Constants.stickDeadband);
+        double strafeVal = MathUtil.applyDeadband(strafeSup.getAsDouble(), Constants.stickDeadband);
+        // double translationVal = TranslationPID.calculate(s_AprilTagsLimelight.LimelightTranslation());
+        // double strafeVal = StrafePID.calculate(s_AprilTagsLimelight.LimelightStrafe());
         //double rotationVal = MathUtil.applyDeadband(rotationSup.getAsDouble(), Constants.stickDeadband);
         //double rotationVal = -1*Math.signum(s_Limelight.LimelightX())*Math.pow(Math.abs(s_Limelight.LimelightX()/-120), 2);
         double rotationVal = RotationPID.calculate(s_AprilTagsLimelight.LimelightRotation());
@@ -60,13 +63,13 @@ public class TeleopAprilTags extends Command {
             rotationVal = 0;
         }
 
-        if(TranslationPID.atSetpoint() == true){
-            translationVal = 0;
-        }
+        // if(TranslationPID.atSetpoint() == true){
+        //     translationVal = 0;
+        // }
 
-        if(StrafePID.atSetpoint() == true){
-            strafeVal = 0;
-        }
+        // if(StrafePID.atSetpoint() == true){
+        //     strafeVal = 0;
+        // }
         
         /* Drive */
         s_Swerve.drive(

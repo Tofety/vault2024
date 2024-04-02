@@ -20,7 +20,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.72
+            "waitTime": 0.73
           }
         },
         {
@@ -80,7 +80,13 @@
         {
           "type": "named",
           "data": {
-            "name": "LongShotPrep"
+            "name": "LongShotOut"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.55
           }
         },
         {

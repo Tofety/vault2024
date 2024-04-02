@@ -10,18 +10,20 @@ import frc.robot.LimelightHelpers;
 import frc.robot.LimelightHelpers.Results;
 
 public class Limelight extends SubsystemBase{
+    //NetworkTable tableNote = NetworkTableInstance.getDefault().getTable("limelight-notes");
+    NetworkTable tableApril = NetworkTableInstance.getDefault().getTable("limelight-april");
     NetworkTable tableNote = NetworkTableInstance.getDefault().getTable("limelight-notes");
     NetworkTableEntry tx = tableNote.getEntry("tx");
     NetworkTableEntry ty = tableNote.getEntry("ty");
     NetworkTableEntry ta = tableNote.getEntry("ta");
     
     // NetworkTable tableApril = NetworkTableInstance.getDefault().getTable("limelight-april");
-    // NetworkTableEntry atx = tableApril.getEntry("tx");
-    // NetworkTableEntry aty = tableApril.getEntry("ty");
-    // NetworkTableEntry ata = tableApril.getEntry("ta");
+    NetworkTableEntry Atx = tableApril.getEntry("tx");
+    NetworkTableEntry Aty = tableApril.getEntry("ty");
+    NetworkTableEntry Ata = tableApril.getEntry("ta");
 
     public Limelight(){
-        NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("camMode").setNumber(1);   
+        NetworkTableInstance.getDefault().getTable("limelight-april").getEntry("camMode").setNumber(0);   
 
     }
     // NetworkTableEntry Atx = AprilTable.getEntry("tx");
@@ -49,9 +51,9 @@ public class Limelight extends SubsystemBase{
             double x = tx.getDouble(0.0);
             double y = ty.getDouble(0.0);
             double area = ta.getDouble(0.0);
-            // double Ax = Atx.getDouble(0.0);
-            // double Ay = Aty.getDouble(0.0);
-            // double Aarea = Ata.getDouble(0.0);
+            double Ax = Atx.getDouble(0.0);
+            double Ay = Aty.getDouble(0.0);
+            double Aarea = Ata.getDouble(0.0);
             SmartDashboard.putNumber("LimelightX", x);
             SmartDashboard.putNumber("LimelightY", y);
             SmartDashboard.putNumber("LimelightArea", area);        

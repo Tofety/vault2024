@@ -93,6 +93,11 @@ public class Intake_Shooter extends SubsystemBase {
         BIntake.set(ControlMode.PercentOutput, 0.75);
     }
 
+    private void runIntakeLong() {
+        TIntake.set(ControlMode.PercentOutput, 1);
+        BIntake.set(ControlMode.PercentOutput, 1);
+    }
+
     private void stopIntake(){
         TIntake.set(ControlMode.PercentOutput, 0);
         BIntake.set(ControlMode.PercentOutput, 0); 
@@ -108,6 +113,10 @@ public class Intake_Shooter extends SubsystemBase {
     
     public Command runIntakeCommand(){
         return this.runOnce(this::runIntake);   
+    }
+
+    public Command runIntakeLongCommand(){
+        return this.runOnce(this::runIntakeLong);   
     }
 
     public Command runIntakeOutCommand(){
