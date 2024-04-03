@@ -25,7 +25,7 @@ public class TeleopAprilTags extends Command {
     //private BooleanSupplier limelightTurnOn;
 
     // private PIDController RotationPID = new PIDController(0.006, 0, 0.008);
-    private PIDController RotationPID = new PIDController(0.0065, 0, 0.000);
+    private PIDController RotationPID = new PIDController(0.0055, 0, 0.000);//4
     // private PIDController TranslationPID = new PIDController(0.0065, 0, 0);
     // private PIDController StrafePID = new PIDController(0.0065, 0, 0);
 
@@ -41,7 +41,7 @@ public class TeleopAprilTags extends Command {
         this.robotCentricSup = robotCentricSup;
         //this.limelightTurnOn = limelightTurnOn;
 
-        RotationPID.setTolerance(5);
+        RotationPID.setTolerance(1);
         RotationPID.setSetpoint(0);
         // TranslationPID.setSetpoint(0);
         // StrafePID.setSetpoint(0);
@@ -58,6 +58,10 @@ public class TeleopAprilTags extends Command {
         //double rotationVal = MathUtil.applyDeadband(rotationSup.getAsDouble(), Constants.stickDeadband);
         //double rotationVal = -1*Math.signum(s_Limelight.LimelightX())*Math.pow(Math.abs(s_Limelight.LimelightX()/-120), 2);
         double rotationVal = RotationPID.calculate(s_AprilTagsLimelight.LimelightRotation());
+
+        if(RotationPID.atSetpoint() == true){
+            rotationVal = 0;
+        }
 
         if(RotationPID.atSetpoint() == true){
             rotationVal = 0;

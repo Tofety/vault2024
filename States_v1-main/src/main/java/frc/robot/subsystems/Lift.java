@@ -67,6 +67,18 @@ public class Lift extends SubsystemBase {
         return this.runOnce(this::LongShotToggle);
     }
 
+    public void ToggleLift(){
+        Left.set(!Left.get());
+        Right.set(!Right.get());
+        // if(Left == false && Right == false){
+        //     Left.set(true);
+        //     Right.set(true);
+        // }else{
+        //     Left.set(false);
+        //     Right.set(false);
+        // }
+    }
+
     public void LongShotIn(){
         StopLeft.set(false);
         StopRight.set(false);
@@ -92,6 +104,10 @@ public class Lift extends SubsystemBase {
 
     public Command LiftDownCommand(){
         return this.runOnce(this::LiftDown);
+    }
+
+    public Command ToggleLiftCommand(){
+        return this.runOnce(this::ToggleLift);
     }
 
         @Override

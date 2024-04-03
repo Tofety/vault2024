@@ -177,7 +177,7 @@ public class Intake_Shooter extends SubsystemBase {
     public void ToggleShooter(){
         if(ShooterFlag == true){
             ShooterMotorLeft.set(-0.56);
-            ShooterMotorRight.set(-0.56);
+            ShooterMotorRight.set(-0.5);
         }else{
             ShooterMotorLeft.set(0);
             ShooterMotorRight.set(0);

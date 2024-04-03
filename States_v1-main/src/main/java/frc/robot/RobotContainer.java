@@ -57,7 +57,7 @@ public class RobotContainer {
     Trigger IntakeTrigger = new JoystickButton(driver, 1);
     Trigger IntakeOutTrigger = new JoystickButton(driver, 6);
     Trigger LiftUpButton = new JoystickButton(driver, 7);
-    Trigger LiftDownButton = new JoystickButton(driver, 30);
+    //Trigger LiftDownButton = new JoystickButton(driver, 30);
     
     Trigger ledButtonTrigger = new JoystickButton(operator, 9);
     
@@ -73,7 +73,7 @@ public class RobotContainer {
     private final JoystickButton zeroGyro = new JoystickButton(driver, 10);
     private final JoystickButton robotCentric = new JoystickButton(driver, 100);
     
-    private final JoystickButton AprilTagsButton = new JoystickButton(driver, 14);
+    private final JoystickButton AprilTagsButton = new JoystickButton(driver, 30);
     private final JoystickButton limelightButton = new JoystickButton(driver, 8);
     
     /* Subsystems */
@@ -160,8 +160,8 @@ public class RobotContainer {
         manualShooterWheelsButtonIn.onTrue(s_Lift.LongShotToggleCommand());
         //manualShooterWheelsButtonIn.onFalse(s_Lift.LongShotInCommand());
         
-        LiftUpButton.onTrue(s_Lift.LiftUpCommand());
-        LiftDownButton.onTrue(s_Lift.LiftDownCommand());
+        LiftUpButton.onTrue(s_Lift.ToggleLiftCommand());
+        //LiftDownButton.onTrue(s_Lift.LiftDownCommand());
         //LiftUpButton.getAsBoolean();
         //.onFalse(s_Lift.LiftUpCommand().until(ShooterButtonPressed));
         //LimelightStop.onTrue(s_Limelight.StopLimelightCommand());
