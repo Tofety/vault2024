@@ -40,6 +40,8 @@ public class Intake_Shooter extends SubsystemBase {
     public PWM led;
     // public PWM ledPWM;
 
+    //private final Lift s_Lift = new Lift();
+
 
     
     public Intake_Shooter() {
@@ -188,7 +190,7 @@ public class Intake_Shooter extends SubsystemBase {
     public void StopAmpShooter(){
         if(ShooterFlag==false){
             ShooterMotorLeft.set(-0.56);
-            ShooterMotorRight.set(-0.56);
+            ShooterMotorRight.set(-0.5);
             ShooterTrigger.set(0);
         }else{
             ShooterMotorLeft.set(0);
